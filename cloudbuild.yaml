@@ -1,10 +1,11 @@
 steps:
 # Copy configuration bucket.
-- name: gcr.io/cloud-builders/gcloud
+- name: 'gcr.io/cloud-builders/gcloud'
   args: [ 'app',
   'deploy' ,
   'app.yaml',
   '--bucket=${_BUCKET}',
   '--project=${_PROJECT_ID}',
-  '--no-promote'
+  '--no-promote',
+  '--stop-previous-version'
   ]
