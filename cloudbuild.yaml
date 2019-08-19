@@ -4,6 +4,7 @@ steps:
   args: [ 'app',
   'deploy' ,
   'app.yaml',
+  '--bucket=${_BUCKET}',
   '--project=${_PROJECT_ID}',
   '--no-promote'
   ]
