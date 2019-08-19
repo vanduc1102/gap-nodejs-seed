@@ -1,4 +1,4 @@
 steps:
 # Copy configuration bucket.
 - name: gcr.io/cloud-builders/gcloud
-  args: [ 'app', 'deploy' ]
+  args: [ 'app', 'deploy' , '--project=${_PROJECT_ID}' ]
