@@ -7,5 +7,6 @@ steps:
   '--bucket=${_BUCKET}',
   '--project=${_PROJECT_ID}',
   '--promote',
-  '--stop-previous-version'
+  '--stop-previous-version',
+  '--quiet'
   ]
