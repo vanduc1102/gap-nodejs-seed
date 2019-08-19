@@ -6,6 +6,6 @@ steps:
   'app.yaml',
   '--bucket=${_BUCKET}',
   '--project=${_PROJECT_ID}',
-  '--no-promote',
+  '--promote',
   '--stop-previous-version'
   ]
