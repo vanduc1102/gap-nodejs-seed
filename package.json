@@ -13,14 +13,25 @@
     "node": ">=10.0.0"
   },
   "scripts": {
+    "dev": "nodemon app.js --watch src",
     "start": "node app.js",
-    "test": "mocha --exit test/*.test.js"
+    "test": "mocha --exit test/*.test.js",
+    "lint": "node_modules/.bin/eslint app.js --ext .js src/"
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "dependencies": {
     "express": "^4.16.3"
   },
   "devDependencies": {
     "mocha": "^6.1.4",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.9",
+    "pre-commit": "^1.2.2"
   }
 }
