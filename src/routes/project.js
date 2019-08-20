@@ -1,6 +1,9 @@
 const app = require('express')();
 
 app.get('/list', (req, res) => {
+  if (Date.now() % 2 === 0) {
+    throw new Error('Bad luck!!');
+  }
   res.send({ msg: `Project Path:${req.originalUrl}` });
 });
 
