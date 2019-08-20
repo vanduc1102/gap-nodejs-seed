@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const logger = require('./src/helpers/logger');
+const logger = require('./helpers/logger');
 const app = express();
 
-const routes = require('./src/routes');
+const routes = require('./routes');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: '50mb' }));
@@ -32,11 +32,5 @@ function logErrors(err, req, res, next) {
 
 app.use(logErrors);
 app.use(errorHandler);
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  logger.info(`App listening on port ${PORT}`);
-});
 
 module.exports = app;

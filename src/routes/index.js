@@ -1,17 +1,18 @@
-const app = require('express')();
+const express = require('express');
+const router = express.Router();
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.send({
     msg: 'Hello! Server is up and running'
   });
 });
 
-app.use('/v1/projects', require('./project'));
+router.use('/v1/projects', require('./project'));
 
-app.all('*', (req, res) => {
+router.all('*', (req, res) => {
   res.status(404).send({
     msg: 'not found'
   });
 });
 
-module.exports = app;
+module.exports = router;
