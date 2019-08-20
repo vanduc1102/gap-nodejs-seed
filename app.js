@@ -22,7 +22,7 @@ function errorHandler(err, req, res, next) {
     return next(err);
   }
   res.status(500);
-  return res.send({ error: err });
+  return res.send({ error: err.message });
 }
 
 function logErrors(err, req, res, next) {
